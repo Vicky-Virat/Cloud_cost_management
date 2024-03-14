@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>This property is to have the value of the AZURE Assignment Group</description>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_avaso_cloud_cost.assignment.group.azure</name>
+        <read_roles/>
+        <suffix>assignment.group.azure</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>Vignesh</sys_created_by>
+        <sys_created_on>2024-02-12 20:33:29</sys_created_on>
+        <sys_id>28a94c8e979cc610badf74771153afe6</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>x_avaso_cloud_cost.assignment.group.azure</sys_name>
+        <sys_package display_value="Cloud Cost Management" source="x_avaso_cloud_cost">f491c7f197d8c610badf74771153af2a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cloud Cost Management">f491c7f197d8c610badf74771153af2a</sys_scope>
+        <sys_update_name>sys_properties_28a94c8e979cc610badf74771153afe6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-14 12:05:18</sys_updated_on>
+        <type>string</type>
+        <value>8a5055c9c61122780043563ef53438e3</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=28a94c8e979cc610badf74771153afe6"/>
+</record_update>

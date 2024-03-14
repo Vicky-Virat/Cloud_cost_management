@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_in_email_action">
+    <sysevent_in_email_action action="INSERT_OR_UPDATE">
+        <action>record_action</action>
+        <active>true</active>
+        <assignment_operator/>
+        <condition_script/>
+        <description/>
+        <event_name>email.read</event_name>
+        <filter_condition table="sys_email">subjectLIKECCM Inbound Email for ServiceNow Ticket^EQ<item endquery="false" field="subject" goto="false" newquery="false" operator="LIKE" or="false" value="CCM Inbound Email for ServiceNow Ticket"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <from/>
+        <name>CCM Inbound Email</name>
+        <order>10</order>
+        <reply_email/>
+        <required_roles/>
+        <script><![CDATA[(function runAction( /*GlideRecord*/ current, /*GlideRecord*/ event, /*EmailWrapper*/ email, /*ScopedEmailLogger*/ logger, /*EmailClassifier*/ classifier) {
+
+    // get the caller email from the email body and stored it in the "userEmail" variable.
+    var userEmail = email.body.callerid;
+
+    // Using "GlideRecord" APi and query the user table with the caller email and get the user id and map it to incident's caller id.
+	
+    var userNameGr = new GlideRecord('sys_user');
+    userNameGr.addQuery('email', userEmail);
+    userNameGr.query();
+    if (userNameGr.next()) {
+        current.caller_id = userNameGr.sys_id;
+
+    }
+    // Extract information from the email body and store it in the incident record.
+    current.short_description = email.body.shortdescription;
+
+    current.description = email.body.description;
+
+
+    // Get the subcategory from the email body and stored it to "subCategory"
+    var subCategory = email.body.subcategory;
+
+    //# Determine assignment group based on the subcategory.
+    if (subCategory == 'Azure') {
+
+        current.assignment_group = gs.getProperty('x_avaso_cloud_cost.assignment.group.azure');
+
+    } else if (subCategory == 'AWS') {
+
+        current.assignment_group = gs.getProperty('x_avaso_cloud_cost.assignment.group.aws');
+
+    }
+    // Check if the current record can be created.
+    if (current.canCreate())
+        current.insert();
+
+})(current, event, email, logger, classifier);]]></script>
+        <stop_processing>false</stop_processing>
+        <sys_class_name>sysevent_in_email_action</sys_class_name>
+        <sys_created_by>Vignesh</sys_created_by>
+        <sys_created_on>2024-02-12 15:50:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d722473597d8c610badf74771153af40</sys_id>
+        <sys_mod_count>37</sys_mod_count>
+        <sys_name>CCM Inbound Email</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Cloud Cost Management" source="x_avaso_cloud_cost">f491c7f197d8c610badf74771153af2a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cloud Cost Management">f491c7f197d8c610badf74771153af2a</sys_scope>
+        <sys_update_name>sysevent_in_email_action_d722473597d8c610badf74771153af40</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-14 12:16:59</sys_updated_on>
+        <table>incident</table>
+        <template>state=1^contact_typeDYNAMICemail^EQ</template>
+        <type>new</type>
+    </sysevent_in_email_action>
+</record_update>
