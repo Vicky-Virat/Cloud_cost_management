@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_hr_core_service">
+    <sn_hr_core_service action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <approval_options/>
+        <at_a_glance_uib_view display_value="At a Glance UIB" name="ataglance_uib">88c750695331301038e4ddeeff7b12ca</at_a_glance_uib_view>
+        <auto_close_case>true</auto_close_case>
+        <auto_close_offset>0</auto_close_offset>
+        <badge display_value="HR">6439a617c3b00300b599b4ad81d3ae57</badge>
+        <case_creation_service_config/>
+        <case_options/>
+        <close_when>all</close_when>
+        <description/>
+        <flow/>
+        <fulfillment_instructions/>
+        <fulfillment_type>service_activity</fulfillment_type>
+        <header_config_opened_for display_value="Default for opened for/approver">86d9872eb3900300f5302ddc16a8dc8b</header_config_opened_for>
+        <header_config_subject_person display_value="Default for opened for/approver">86d9872eb3900300f5302ddc16a8dc8b</header_config_subject_person>
+        <hr_criteria/>
+        <le_type/>
+        <name>testing </name>
+        <producer/>
+        <service_table>sn_hr_core_case_payroll</service_table>
+        <service_table_fields/>
+        <subject_person_access>true</subject_person_access>
+        <subject_person_related_lists/>
+        <sys_class_name>sn_hr_core_service</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-03-12 12:02:00</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>43092b432fb842103cbed39df699b603</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>testing </sys_name>
+        <sys_package display_value="Cloud Cost Management" source="x_avaso_cloud_cost">f491c7f197d8c610badf74771153af2a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cloud Cost Management">f491c7f197d8c610badf74771153af2a</sys_scope>
+        <sys_update_name>sn_hr_core_service_43092b432fb842103cbed39df699b603</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-03-12 12:02:00</sys_updated_on>
+        <template/>
+        <topic_detail display_value="Payroll System">b9afca6d3b622200705d86a734efc498</topic_detail>
+        <value>testing</value>
+        <workflow_detail/>
+    </sn_hr_core_service>
+    <sys_translated_text action="delete_multiple" query="documentkey=43092b432fb842103cbed39df699b603"/>
+</record_update>
